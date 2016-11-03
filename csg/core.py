@@ -110,6 +110,15 @@ class CSG(object):
                 
         return newCSG
 
+    def scale(self, scalar):
+        """
+        Scale Geometry
+        :param scalar: scalar (float)
+        """
+        for poly in self.polygons:
+            for v in poly.vertices:
+                v.pos = v.pos.times(scalar)
+
     def translate(self, disp):
         """
         Translate Geometry.
